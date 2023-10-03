@@ -30,7 +30,12 @@ class _TaskListState extends State<TaskList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Todo List'),
+        centerTitle: true,
+        backgroundColor: Colors.indigo[900],
+        title: const Text(
+          'Todo List',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: ListView.builder(
         itemCount: todos.length,
@@ -69,6 +74,7 @@ class _TaskListState extends State<TaskList> {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.indigo,
         onPressed: () {
           _addTodo();
         },
@@ -138,7 +144,7 @@ class _TaskListState extends State<TaskList> {
 
 //method to update the data in the dialogbox
 
-    void _showEditDialog(Todo todo) {
+  void _showEditDialog(Todo todo) {
     final TextEditingController titleController =
         TextEditingController(text: todo.title);
     final TextEditingController descriptionController =
@@ -190,5 +196,4 @@ class _TaskListState extends State<TaskList> {
       },
     );
   }
-
 }
